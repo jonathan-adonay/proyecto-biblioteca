@@ -1,15 +1,15 @@
 {{--Heredemos la estructura del archivo app.blade.php--}}
 
-@extends('layout.app')
+@extends('layouts.app')
 
 {{--Definimos el titulo--}}
-@section('title', 'Recordatorios')
+@section('title', 'prestamos')
 
 {{--DEfinimos el contenido--}}
 @section('content')
     
 <br>
-<a class="btn btn-danger btn-sm" href="/recordatorios/create">Agregar nuevo recordatorio</a>
+<a class="btn btn-danger btn-sm" href="/prestamos/create">Agregar nuevo recordatorio</a>
 
 <hr>
 

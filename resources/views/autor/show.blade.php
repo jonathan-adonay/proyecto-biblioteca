@@ -1,6 +1,6 @@
 {{--Heredemos la estructura del archivo app.blade.php--}}
 
-@extends('layout.app')
+@extends('layouts.app')
 
 {{--Definimos el titulo--}}
 @section('title', 'Autor')
@@ -23,12 +23,18 @@
     </thead>
     <tbody>
       <tr>
+      @foreach ($autor as $item) 
+        <tr>
+        <td>{{ $item->nombre }}</td>
+        <td>{{ $item->apellidos }}</td>
+        <td>
        
-<a class="btn btn-success btn-sm" >Modificar</a>
+<a class="btn btn-success btn-sm" href="/autor/edit/{{$item->codigo}}" >Modificar</a>
 <button class="btn btn-danger btn-sm"  onclick="destroy(this)" token="{{ csrf_token() }}">Eliminar</a>
 </td>
  </tr> 
 
+ @endforeach
 </tbody>
  </table>
 
@@ -37,5 +43,5 @@
  {{-- SweetAlert --}}
  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  {{-- JS --}}
- <script src="{{ asset('js/product.js') }}"></script>
+ <script src="{{ asset('js/autor.js') }}"></script>
 @endsection

@@ -1,6 +1,6 @@
 {{--Heredemos la estructura del archivo app.blade.php--}}
 
-@extends('layout.app')
+@extends('layouts.app')
 
 {{--Definimos el titulo--}}
 @section('title', 'Detalle_prestamo')
@@ -26,7 +26,7 @@
     <tbody>
       <tr>
         
-<a class="btn btn-success btn-sm" >Modificar</a>
+<a class="btn btn-success btn-sm"  >Modificar</a>
 <button class="btn btn-danger btn-sm"  onclick="destroy(this)" token="{{ csrf_token() }}">Eliminar</a>
 </td>
  </tr> 

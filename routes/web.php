@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\LibrosController;
-// use App\Http\Controllers\AutorController; // Asegúrate de tener un controlador para autores
-// use App\Http\Controllers\PrestamosController;
+use App\Http\Controllers\LibrosController;
+use App\Http\Controllers\AutorController; // Asegúrate de tener un controlador para autores
+use App\Http\Controllers\PrestamosController;
 
-// Route::resource('prestamos', PrestamosController::class);
+Route::resource('prestamos', PrestamosController::class);
 
 
 
@@ -31,11 +31,17 @@ Route::get('/libros/update', function () {
 //Autor
 Route::resource('autor', AutorController::class);
 
- Route::get('/autor/show', [AutorController::class, 'index']);
+ Route::get('/autor/show/{autor}', [AutorController::class, 'index'])->name('autor.show');
+ Route::get('/autor/create', [AutorController::class, 'create'])->name('autor.create');
+ Route::get('/autor/update/{autor}', [AutorController::class, 'update'])->name('autor.update');
+ Route::get('/autor/delete/{autor}', [AutorController::class, 'destroy'])->name('autor.delete');
+ Route::get('/autor/edit/{autor}', [AutorController::class, 'edit'])->name('autor.edit');
+ Route::get('/autor/store/', [AutorController::class, 'store'])->name('autor.store');
+ Route::get('/autor/destroy/{id}', [AutorController::class, 'destroy'])->name('autor.destroy');
 
 
 Route::get('/autor/show', function () {
-    return view('autor/show');
+    return view('autor/show');  
 });
 
 Route::get('/autor/create', function () {
@@ -48,7 +54,7 @@ Route::get('/autor/update', function () {
 
 
 //editoriales
-// Route::resource('editoriales', AutorController::class);
+Route::resource('editoriales', AutorController::class);
 
 
 Route::get('/editoriales/show', function () {
@@ -152,6 +158,13 @@ Route::get('/reportes/update', function () {
 
 //nombre
 
-Route::get('/inicio/nombre', function () {
-    return view('inicio/nombre',['nombre'=>'jonathan adpnay'],['apellido'=>'juarez valladares']);
+Route::get('/home', function () {
+    return view('home');
 });
+
+
+Auth::routes();
+
+
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

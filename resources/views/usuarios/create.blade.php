@@ -1,5 +1,5 @@
 {{-- Heredamos la estructura del archivo app.blade.php --}}
-@extends('layout.app')
+@extends('layouts.app')
 
 {{-- Definimos el título --}}
 @section('title', 'Crear Usuario')

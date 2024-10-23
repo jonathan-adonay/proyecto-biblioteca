@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Autor;
+use App\Models\BranchAutor;
 
 class AutorController extends Controller
 {
@@ -23,7 +25,7 @@ class AutorController extends Controller
             "website",
             "foto",
             "genero"
-        )->join("autor","autor", "=", "editoriales")->get();
+        )-get();
         //dd($productos);
 
         //mostrar vistas show.blade.php junto al listado de productos
@@ -41,9 +43,9 @@ class AutorController extends Controller
     public function create()
     {
            //listsar marcas para llenar select 
-           $cliente = BranchCliente::all();
+        //    $cliente = BranchCliente::all();
            //mostrar vista create.blade.php junto al listado de editoriales
-           return view('/autor/create')->with(['editoriales'=>$autor]);
+           return view('/autor/create');
    
            /**
             * @param \Illuminate\Http\Request 

@@ -1,6 +1,6 @@
 {{--Heredemos la estructura del archivo app.blade.php--}}
 
-@extends('./layout.name')
+@extends('./layouts.name')
 
 {{--Definimos el titulo--}}
 @section('title', 'Inicio')

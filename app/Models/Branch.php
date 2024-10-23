@@ -9,8 +9,7 @@ class Branch extends Model
 {
     use HasFactory;
     
-    protected $table='editoriales'; //nombre de la table
+    protected $table='autores'; //nombre de la table
     protected $primaryKey = 'id'; //llave primaria de la tabla
-    protected $fillable = ['nombre','direccion']; //campos para asignacion masiva
-
+    protected $fillable = ['nombre','apellido','biografia','fecha_nacimiento','nacionalidad','email','telefono','website','foto','genero'];
 }

@@ -1,5 +1,5 @@
 {{-- Heredamos la estructura del archivo app.blade.php --}}
-@extends('layout.app')
+@extends('layouts.app')
 
 {{-- Definimos el título --}}
 @section('title', 'Crear Autor')
@@ -10,7 +10,8 @@
     <h1 class="text-center text-light">Crear Autor</h1>
     <h5 class="text-center text-light">Formulario de Autores</h5>
     <hr class="bg-light">
-    <form class="row g-3" method="POST" >
+    <form class="row g-3" method="POST"  action="/autor/store">
+
         @csrf  {{-- Agregar token CSRF para la seguridad --}}
         
         <div class="col-md-6">
